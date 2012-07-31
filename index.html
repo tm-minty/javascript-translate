@@ -33,8 +33,10 @@
 	<script type="text/javascript">
 		(function($){
 			$(function(){
+				var time = (new Date() - 0);
 				var translate = new Translate(aeDictionary);
 				translate.phrases("ru", "en").words("ru", "en");
+				console.log( time, (new Date() - 0), (new Date() - 0) - time);
 			});
 		})(jQuery);
 	</script>
