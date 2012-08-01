@@ -71,5 +71,23 @@ var Translate = function(dictionary){
 		return this;
 	};
 
+	this.attributes = function(from, to){ // Translate value and placeholder attributes in INPUT nodes
+		for( var i = elements.length; i--; ){
+			var element = elements[i];
+			if( element.nodeName == 'INPUT' ){
+				if( element.hasAttribute('value') ){
+					for( var d = dictionary.length; d--; ){
+						element.value = element.value.replace( dictionary[d][from], dictionary[d][to]);
+					};
+				}else if( element.hasAttribute('placeholder') ){
+					for( var d = dictionary.length; d--; ){
+						element.placeholder = element.placeholder.replace( dictionary[d][from], dictionary[d][to]);
+					};
+				};
+			};
+		};
+		return this;
+	};
+
 	return this;
 };
