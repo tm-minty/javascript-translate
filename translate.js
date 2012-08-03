@@ -79,7 +79,7 @@ var Translate = function(dictionary){
 					for( var d = dictionary.length; d--; ){
 						element.value = element.value.replace( dictionary[d][from], dictionary[d][to]);
 					};
-				}else if( element.hasAttribute('placeholder') ){
+				}else if( element.hasAttribute('placeholder') && typeof element.placeholder != 'undefined' ){
 					for( var d = dictionary.length; d--; ){
 						element.placeholder = element.placeholder.replace( dictionary[d][from], dictionary[d][to]);
 					};
